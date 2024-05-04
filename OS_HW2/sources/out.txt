@@ -1,0 +1,73 @@
+os.cpp:213:25: warning: no return statement in function returning non-void [-Wreturn-type]
+  213 |     } while (errorflag);}
+      |                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33,
+                 from /usr/include/c++/11/bits/allocator.h:46,
+                 from /usr/include/c++/11/string:41,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from ../libs/file.h:3,
+                 from ../libs/os.h:3,
+                 from os.cpp:1:
+/usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = Directory; _Args = {Directory*&}; _Tp = Directory]’:
+/usr/include/c++/11/bits/alloc_traits.h:516:17:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = Directory; _Args = {Directory*&}; _Tp = Directory; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<Directory>]’
+/usr/include/c++/11/bits/shared_ptr_base.h:519:39:   required from ‘std::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {Directory*&}; _Tp = Directory; _Alloc = std::allocator<Directory>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr_base.h:650:16:   required from ‘std::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = Directory; _Alloc = std::allocator<Directory>; _Args = {Directory*&}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:   required from ‘std::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<Directory>; _Args = {Directory*&}; _Tp = Directory; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr.h:409:59:   required from ‘std::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<Directory>; _Args = {Directory*&}; _Tp = Directory]’
+/usr/include/c++/11/bits/shared_ptr.h:862:14:   required from ‘std::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = Directory; _Alloc = std::allocator<Directory>; _Args = {Directory*&}]’
+/usr/include/c++/11/bits/shared_ptr.h:878:39:   required from ‘std::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = Directory; _Args = {Directory*&}]’
+os.cpp:53:56:   required from here
+/usr/include/c++/11/ext/new_allocator.h:162:11: error: no matching function for call to ‘Directory::Directory(Directory*&)’
+  162 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../libs/os.h:3,
+                 from os.cpp:1:
+../libs/file.h:55:9: note: candidate: ‘Directory::Directory(std::string, std::shared_ptr<Directory>)’
+   55 |         Directory(string n_,shared_ptr<Directory> parentF=nullptr);
+      |         ^~~~~~~~~
+../libs/file.h:55:26: note:   no known conversion for argument 1 from ‘Directory*’ to ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’}
+   55 |         Directory(string n_,shared_ptr<Directory> parentF=nullptr);
+      |                   ~~~~~~~^~
+../libs/file.h:47:7: note: candidate: ‘Directory::Directory(const Directory&)’
+   47 | class Directory : public File{
+      |       ^~~~~~~~~
+../libs/file.h:47:7: note:   no known conversion for argument 1 from ‘Directory*’ to ‘const Directory&’
+In file included from /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33,
+                 from /usr/include/c++/11/bits/allocator.h:46,
+                 from /usr/include/c++/11/string:41,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from ../libs/file.h:3,
+                 from ../libs/os.h:3,
+                 from os.cpp:1:
+/usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = RegularFile; _Args = {RegularFile*&}; _Tp = RegularFile]’:
+/usr/include/c++/11/bits/alloc_traits.h:516:17:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = RegularFile; _Args = {RegularFile*&}; _Tp = RegularFile; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<RegularFile>]’
+/usr/include/c++/11/bits/shared_ptr_base.h:519:39:   required from ‘std::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {RegularFile*&}; _Tp = RegularFile; _Alloc = std::allocator<RegularFile>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr_base.h:650:16:   required from ‘std::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = RegularFile; _Alloc = std::allocator<RegularFile>; _Args = {RegularFile*&}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:   required from ‘std::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<RegularFile>; _Args = {RegularFile*&}; _Tp = RegularFile; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]’
+/usr/include/c++/11/bits/shared_ptr.h:409:59:   required from ‘std::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<RegularFile>; _Args = {RegularFile*&}; _Tp = RegularFile]’
+/usr/include/c++/11/bits/shared_ptr.h:862:14:   required from ‘std::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = RegularFile; _Alloc = std::allocator<RegularFile>; _Args = {RegularFile*&}]’
+/usr/include/c++/11/bits/shared_ptr.h:878:39:   required from ‘std::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = RegularFile; _Args = {RegularFile*&}]’
+os.cpp:94:54:   required from here
+/usr/include/c++/11/ext/new_allocator.h:162:11: error: no matching function for call to ‘RegularFile::RegularFile(RegularFile*&)’
+  162 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../libs/os.h:3,
+                 from os.cpp:1:
+../libs/file.h:181:5: note: candidate: ‘RegularFile::RegularFile(std::string, std::shared_ptr<Directory>, size_t)’
+  181 |     RegularFile(string,shared_ptr<Directory > parentF=nullptr,size_t st=1);
+      |     ^~~~~~~~~~~
+../libs/file.h:181:17: note:   no known conversion for argument 1 from ‘RegularFile*’ to ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’}
+  181 |     RegularFile(string,shared_ptr<Directory > parentF=nullptr,size_t st=1);
+      |                 ^~~~~~
+../libs/file.h:127:7: note: candidate: ‘RegularFile::RegularFile(const RegularFile&)’
+  127 | class RegularFile:public File{
+      |       ^~~~~~~~~~~
+../libs/file.h:127:7: note:   no known conversion for argument 1 from ‘RegularFile*’ to ‘const RegularFile&’
