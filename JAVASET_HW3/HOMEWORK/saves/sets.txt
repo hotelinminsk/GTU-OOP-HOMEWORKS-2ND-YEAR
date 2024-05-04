@@ -1,0 +1,6 @@
+set_Values
+Java Set: -> [apple, banana, orange ]
+set_Values
+Java Set: -> [21.3, 22.3, 250.25 ]
+set_Values
+Java Set: -> [1, 2, 3, 6 ]

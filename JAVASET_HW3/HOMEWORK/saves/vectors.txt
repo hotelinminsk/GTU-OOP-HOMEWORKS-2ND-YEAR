@@ -1,0 +1,6 @@
+vec_Values
+Java Vector: -> [1, 2, 3 ]
+vec_Values
+Java Vector: -> [Merhaba, Dunya, Hello world! ]
+vec_Values
+Java Vector: -> [12.6, 1.5, 2.87 ]
