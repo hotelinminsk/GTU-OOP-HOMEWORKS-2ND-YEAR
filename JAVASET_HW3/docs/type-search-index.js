@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"HOMEWORK","l":"JavaContainer"},{"p":"HOMEWORK","l":"JavaSet"},{"p":"HOMEWORK","l":"JavaVector"},{"p":"HOMEWORK","l":"myIter"},{"p":"HOMEWORK","l":"test"}];updateSearchResults();
